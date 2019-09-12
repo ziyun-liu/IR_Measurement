@@ -53,3 +53,7 @@ for ii = 1:(count)
     end
 end
 toc;
+
+%%
+filename = input('Input the Exp Name for Data: \n','s');
+save(filename,'Data');

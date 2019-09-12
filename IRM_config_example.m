@@ -5,7 +5,9 @@
 % close all;
 % clc;clear;
 clear config;
-addpath('../common_functions');
+% addpath('/Users/liuziyun/Documents/GitHub/IR_toolbox');
+% addpath('/Users/liuziyun/Documents/GitHub/IR_Measurment');
+% addpath('/Users/liuziyun/Documents/GitHub/IR_Measurment_SpiderMic');
 
 %% Config Hardware
 samplerate_speed = 1;
