@@ -41,8 +41,8 @@ aPR.PlayerChannelMapping =config.PlayerChannelMapping;
 
 
 for k = 1:config.N_measure
-    aPR.PlayerChannelMapping = [ config.out_chn_select(k) ];
-%     audioToDevice = zeros(config.frameSize, size(config.out_chn_select,2));
+%     aPR.PlayerChannelMapping = [ config.out_chn_select(k) ];
+    audioToDevice = zeros(config.frameSize, size(config.out_chn_select,2));
     recsig = zeros(config.sweep_length*2 *config.N_repeat, size(config.Rec_in_chn,2));
 
     for j = 1:config.N_repeat
@@ -52,7 +52,7 @@ for k = 1:config.N_measure
             idx_s = config.frameSize*(i-1)+1;
             idx_e = config.frameSize*i;
 
-            audioToDevice = outsig(idx_s:idx_e,:);
+            audioToDevice(:,k) = outsig(idx_s:idx_e,:);
 
             [audioFromDevice,numUnderrun,numOverrun] = step(aPR,audioToDevice);
 
