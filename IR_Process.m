@@ -12,15 +12,15 @@ end
 %% Export to IRD
 IRD.config = config;
 IRD.fs = config.fs;
-IRD.length = config.sweep_length;
+IRD.length = size(IR_tmp,1);
 IRD.IR = IR;
 IRD.position = position;
 IRD.date = datetime;
 
 IRD.idx = config.out_chn_select;
-IRD.idx_type = 'L,R';
+IRD.idx_type = '';
 
-IRD.note = 'LIR & NIR in Demo Room';
+IRD.note = '';
 
 % oct_sm = 12;
 % peek_IRD_cell( IRD , oct_sm );

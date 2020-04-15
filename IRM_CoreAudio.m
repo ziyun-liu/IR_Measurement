@@ -33,7 +33,7 @@ aPR = audioPlayerRecorder('SampleRate',config.fs,...
 % aPRInfo = info(aPR);
         
 %% Measurement I/O
-recsig_cell = cell(config.N_measure);
+recsig_cell = cell(config.N_measure,1);
 totalUnderrun = 0;
 totalOverrun = 0;
 

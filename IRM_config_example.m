@@ -35,7 +35,7 @@ config.out_chn_select = [ 11 12 ];
 config.RecorderChannelMapping = [ config.Rec_in_chn ];
 config.PlayerChannelMapping = [ config.out_chn_select ];
 
-config.DeviceName = 'Fireface UC Mac (23712103)';
+config.DeviceName = 'Fireface UC Mac (23935003)';
 
 % load('CHZ216-08_RME.mat');
 % config.Mic_info = Mic_info;
