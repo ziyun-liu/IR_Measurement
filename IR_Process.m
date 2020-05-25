@@ -1,6 +1,6 @@
 function IRD=IR_Process(excsig, recsig_cell, config, position)
 %% IR Processing
-IR = cell(size(config.Rec_in_chn,2),size(config.out_chn_select,2));
+IR = cell(size(config.Rec_in_chn,2),config.N_measure);
 
 for k = 1:config.N_measure
     for i = 1:size(config.Rec_in_chn,2) 
