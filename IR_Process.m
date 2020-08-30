@@ -24,8 +24,22 @@ IRD.note = '';
 
 % oct_sm = 12;
 % peek_IRD_cell( IRD , oct_sm );
+%%
+if "maci64" == computer('arch')
+    slash = '/';
+else 
+    slash = '\';
+end
+
+actpath = cd;   
+
+if ~exist('IRD_Data','dir')
+    mkdir('IRD_Data');
+end
 
 filename = string(datetime,'yyyyMMdd_HH_mm_ss');
-save(filename,'IRD');
+path = [actpath,slash,'IRD_Data',slash, filename, '.mat'];
+
+save(join(path,''),'IRD');
 
 end
