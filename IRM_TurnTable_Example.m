@@ -1,8 +1,6 @@
 %% Manual Measurement
-% measure=Calculate(Room); 
 count = 200; 
-% Motorprepare(Room); 
-% pause;
+
 use_TurnTable = 1;
 TurnTable_No = 2;
 %%
@@ -30,18 +28,6 @@ tic;
 for ii = 1:(count)
     %% Measurement
     [ recsig_cell, excsig ] = IRM_CoreAudio( config );
-%       [ recsig_cell, excsig ] = IRM_CoreAudio_filter( config );
-
-    %% Parallel
-    position = ii;
-    if config.usingParallel
-        f = parfeval(p,@IR_Process,1,excsig, recsig_cell, config, position);
-    end
-        
-    %% Motor Op.
-%         if(ii~=count)
-%             Motormove(Room,measure,ii);
-%         end
 
     %% Turntable Op.
     if(use_TurnTable)
@@ -64,18 +50,9 @@ for ii = 1:(count)
         end
     end
     %% Fetch Result
-    if config.usingParallel
-        IRD = fetchOutputs(f);
-    else
-        IRD = IR_Process(excsig, recsig_cell, config, position);
-    end
     
-    Data{ii} = IRD;
+    Data{ii} = recsig_cell;
     
-    if(~use_TurnTable)
-        peek_IRD_cell_noSm(IRD,3);
-    end
-
     fprintf('Measured \t %d \t of %d \n' ,ii,count);
     
     if(ii<count && ~use_TurnTable)
