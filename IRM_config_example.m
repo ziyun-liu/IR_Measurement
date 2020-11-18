@@ -3,7 +3,7 @@
 % 2020-11-17
 
 clear config;
-
+addpath('functions')
 %% Config Hardware
 samplerate_speed = 1;
 config.fs = 48e3 * samplerate_speed;
