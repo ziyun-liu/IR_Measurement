@@ -28,7 +28,11 @@ while(1) %Polling untile data received
     end
     pause(0.1);
     idx = idx+1;
-    assert(  idx < 100, ' Turntable time out! ' );
+%     assert(  idx < 100, ' Turntable time out! ' );
+    if (idx>100)
+        break;
+    end
+
 end
 CR = 0;
 end
